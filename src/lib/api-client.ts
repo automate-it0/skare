@@ -14,7 +14,7 @@ async function request<T>(
   opts?: RequestInit & { json?: unknown },
 ): Promise<T> {
   const headers: Record<string, string> = { ...(opts?.headers as any) };
-  let body: BodyInit | undefined = opts?.body;
+  let body: BodyInit | undefined = opts?.body ?? undefined;
   if (opts?.json !== undefined) {
     headers["Content-Type"] = "application/json";
     body = JSON.stringify(opts.json);

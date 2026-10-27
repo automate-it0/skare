@@ -44,6 +44,14 @@ const eslintConfig = [...nextCoreWebVitals, ...nextTypescript, {
     "no-useless-escape": "off",
   },
 }, {
+  // CommonJS operational scripts (.cjs) legitimately use `require()` — they
+  // are plain Node scripts run directly by the operator, not part of the
+  // TypeScript module graph. The TS-only import rule does not apply.
+  files: ["**/*.cjs"],
+  rules: {
+    "@typescript-eslint/no-require-imports": "off",
+  },
+}, {
   ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts", "examples/**", "skills"]
 }];
 

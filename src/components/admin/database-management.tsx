@@ -105,10 +105,9 @@ export function DatabaseManagement() {
     try {
       const text = await importFile.text();
       const data = JSON.parse(text); // validate JSON
-      const r = await api.post(
-        `/api/db/import?mode=${importMode}`,
-        data,
-      );
+      const r = await api.post<{
+        imported: { products: number; categories: number; coupons: number };
+      }>(`/api/db/import?mode=${importMode}`, data);
       notify("success", `تم استيراد: ${r.imported.products} منتج، ${r.imported.categories} قسم، ${r.imported.coupons} كوبون`);
       load();
     } catch (e) {
