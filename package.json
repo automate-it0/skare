@@ -1,6 +1,6 @@
 {
-  "name": "nextjs_tailwind_shadcn_ts",
-  "version": "0.2.1",
+  "name": "skare-store",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000 2>&1 | tee dev.log",
@@ -94,5 +94,26 @@
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.5",
     "typescript": "^5"
-  }
+  },
+  "description": "Full-stack e-commerce store for beauty & skincare products — Next.js 16, Prisma, admin dashboard, i18n (AR/EN) and Playwright E2E.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/automate-it0/skare.git"
+  },
+  "homepage": "https://github.com/automate-it0/skare#readme",
+  "bugs": {
+    "url": "https://github.com/automate-it0/skare/issues"
+  },
+  "keywords": [
+    "ecommerce",
+    "nextjs",
+    "typescript",
+    "prisma",
+    "tailwindcss",
+    "shadcn-ui",
+    "playwright",
+    "arabic",
+    "i18n"
+  ]
 }

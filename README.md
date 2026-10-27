@@ -1,4 +1,22 @@
-# Skare Store
+<div align="center">
+
+# 🛍️ Skare Store
+
+**Full-stack e-commerce platform for beauty & skincare products** — Next.js 16, Prisma, admin dashboard, bilingual AR/EN, and 29 Playwright E2E tests.
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
+[![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma)](https://www.prisma.io)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+
+[![E2E Tests](https://img.shields.io/badge/Playwright-29%20tests-green?logo=playwright)](https://playwright.dev)
+
+</div>
+
+---
+
+
 
 متجر إلكتروني متكامل لمنتجات العناية والتجميل، مبني بـ Next.js 16.
 
