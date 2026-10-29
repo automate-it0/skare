@@ -16,8 +16,6 @@
 
 ---
 
-
-
 متجر إلكتروني متكامل لمنتجات العناية والتجميل، مبني بـ Next.js 16.
 
 ## ✨ المميزات
@@ -56,11 +54,15 @@ bun install          # أو npm install
 ### 3) إعداد البيئة
 ```bash
 cp .env.example .env
-# عدّل القيم في .env:
-# - NEXTAUTH_SECRET: ولّده بـ `openssl rand -base64 32`
-# - ADMIN_EMAIL: إيميلك (سيصبح أدمن)
-# - ADMIN_PASSWORD (اختياري): كلمة سر الأدمن
 ```
+
+| المتغير | الوصف |
+|--------|------|
+| `DATABASE_URL` | مسار قاعدة SQLite (افتراضي: `file:./dev.db`) |
+| `NEXTAUTH_SECRET` | سر تشفير الجلسات — ولّده بـ `openssl rand -base64 32` |
+| `NEXTAUTH_URL` | رابط الموقع (افتراضي: `http://localhost:3000`) |
+| `ADMIN_EMAIL` | إيميلك — يصبح حساب الأدمن بعد الـ seed |
+| `ADMIN_PASSWORD` | (اختياري) كلمة سر الأدمن — إذا تُركت فارغة يولّدها الـ seed عشوائياً |
 
 ### 4) إعداد قاعدة البيانات
 ```bash
@@ -133,6 +135,15 @@ prisma/
 - **8 نماذج**: User, Category, Product, CartItem, Order, OrderItem, DiscountCode, UsedCode, AuditLog
 - **نسخ احتياطي**: من لوحة الأدمن → تبويب "قاعدة البيانات" → "تصدير"
 - **استرجاع**: من نفس التبويب → "استيراد" (دمج أو استبدال)
+
+## 🧪 الاختبارات
+
+29 اختبار E2E بـ Playwright يغطي كل تدفق رئيسي: التصفح، التسجيل والدخول، السلة والكوبونات، إتمام الطلب، صلاحيات الأدمن، والـ security headers.
+
+```bash
+bunx playwright install chromium   # مرة واحدة فقط
+bunx playwright test              # تشغيل كل الاختبارات
+```
 
 ## 📝 الترخيص
 
