@@ -1,18 +1,16 @@
 version: 2
 
 updates:
-  # Root app — Next.js 16 + TypeScript (installed with bun, lockfile: bun.lock)
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-
+  # NOTE: JS dependency updates are NOT tracked here. The project locks
+  # dependencies with bun.lock (no package-lock.json), and Dependabot's
+  # npm updater currently fails on bun-only lockfiles. Run
+  # `bun update` manually instead.
+  #
   # Keep GitHub Actions pinned to fresh versions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
